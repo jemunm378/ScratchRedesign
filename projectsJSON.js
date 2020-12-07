@@ -2,10 +2,10 @@ json();
 
 function json() {
 $.getJSON("https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/proxy/featured/", function(udata) {
-    var data = udata.curator_top_projects;
+    var data = udata.community_featured_projects;
     console.log(data);
     var itemone = data[1];
-    var curator = itemone.curator_name;
+    var curator = itemone.creator;
     document.querySelector('#curator').innerHTML = curator;
     for (i = 0; i < 5; i++) {
         var curates = document.querySelector('.cgrid');
